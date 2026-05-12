@@ -600,8 +600,11 @@ function EmailPreview({ item, copiedKey, onCopy }) {
           {item.emailButton ? (
             <div className="group flex items-start gap-2 pt-1">
               <div className="min-w-0 flex-1">
-                <div className="inline-flex items-center rounded-full bg-slate-900 px-3.5 py-1.5 text-[13px] font-medium text-white">
-                  <span>{renderHighlightedText(item.emailButton, "text-sky-100")}</span>
+                <div
+                  className="inline-flex items-center px-3.5 py-1.5 text-[13px] font-medium text-white"
+                  style={{ backgroundColor: "#05AAFF", borderRadius: "22px" }}
+                >
+                  <span>{renderHighlightedText(item.emailButton, "text-white/90")}</span>
                 </div>
               </div>
               <div className="shrink-0 pt-0.5 opacity-100 transition-opacity">
