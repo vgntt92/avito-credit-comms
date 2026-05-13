@@ -385,6 +385,20 @@ function getStatuses(segment, deliveryType) {
   return orderedValues
 }
 
+function normalizeSearchValue(value) {
+  return value.trim().toLocaleLowerCase("ru-RU")
+}
+
+function statusMatchesSearch(status, query) {
+  const normalizedQuery = normalizeSearchValue(query)
+
+  if (!normalizedQuery) {
+    return true
+  }
+
+  return status.toLocaleLowerCase("ru-RU").includes(normalizedQuery)
+}
+
 function getFieldCount(items) {
   return items.reduce((count, item) => {
     return (
@@ -670,6 +684,7 @@ function App() {
   const [selectedSegment, setSelectedSegment] = useState(segmentOptions[0] ?? "C2C")
   const [selectedDeliveryType, setSelectedDeliveryType] = useState("")
   const [selectedStatuses, setSelectedStatuses] = useState([])
+  const [statusSearchQuery, setStatusSearchQuery] = useState("")
   const [updatedSince, setUpdatedSince] = useState("")
   const [dateSortMode, setDateSortMode] = useState("none")
   const [copiedKey, setCopiedKey] = useState("")
@@ -677,6 +692,7 @@ function App() {
 
   const deliveryTypes = getDeliveryTypes(selectedSegment)
   const statuses = getStatuses(selectedSegment, selectedDeliveryType)
+  const filteredStatuses = statuses.filter((status) => statusMatchesSearch(status, statusSearchQuery))
 
   useEffect(() => {
     if (!deliveryTypes.length) {
@@ -691,6 +707,7 @@ function App() {
 
   useEffect(() => {
     setSelectedStatuses(statuses)
+    setStatusSearchQuery("")
   }, [selectedSegment, selectedDeliveryType])
 
   const visibleCommunications = sortCommunicationsByDate(
@@ -699,6 +716,7 @@ function App() {
         item.segment === selectedSegment &&
         item.deliveryType === selectedDeliveryType &&
         selectedStatuses.includes(item.statusLabel) &&
+        statusMatchesSearch(item.statusLabel, statusSearchQuery) &&
         matchesUpdatedSince(item.lastTextChangeAt, updatedSince)
       )
     }),
@@ -825,8 +843,29 @@ function App() {
                       </div>
                     </div>
 
+                    <div className="relative">
+                      <input
+                        className="h-10 w-full rounded-full border border-slate-200 bg-white pl-4 pr-11 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-slate-300 focus:ring-2 focus:ring-slate-200"
+                        onChange={(event) => setStatusSearchQuery(event.target.value)}
+                        placeholder="Поиск по статусам"
+                        type="text"
+                        value={statusSearchQuery}
+                      />
+                      {statusSearchQuery ? (
+                        <button
+                          aria-label="Очистить поиск по статусам"
+                          className="absolute right-3 top-1/2 inline-flex size-6 -translate-y-1/2 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+                          onClick={() => setStatusSearchQuery("")}
+                          title="Очистить поиск"
+                          type="button"
+                        >
+                          <X className="size-4" />
+                        </button>
+                      ) : null}
+                    </div>
+
                     <div className="flex flex-wrap gap-2">
-                      {statuses.map((status) => {
+                      {filteredStatuses.map((status) => {
                         const active = selectedStatuses.includes(status)
 
                         return (
@@ -862,6 +901,10 @@ function App() {
                         )
                       })}
                     </div>
+
+                    {filteredStatuses.length ? null : (
+                      <p className="text-sm leading-6 text-slate-500">По этому способу доставки статусы по запросу не найдены.</p>
+                    )}
                   </section>
 
                 </>
