@@ -847,7 +847,7 @@ function App() {
                       <input
                         className="h-10 w-full rounded-full border border-slate-200 bg-white pl-4 pr-11 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-slate-300 focus:ring-2 focus:ring-slate-200"
                         onChange={(event) => setStatusSearchQuery(event.target.value)}
-                        placeholder="Поиск по статусам"
+                        placeholder="Начните вводить название..."
                         type="text"
                         value={statusSearchQuery}
                       />
