@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { Bell, CalendarDays, Check, CheckCheck, ChevronDown, Clock3, Copy, LocateFixed, Mail, Package, X } from "lucide-react"
+import { Bell, CalendarDays, Check, CheckCheck, ChevronDown, Clock3, Copy, LocateFixed, Mail, Package, Search, X } from "lucide-react"
 
 import avitoPushIcon from "@/assets/avito-push-icon.png"
 import csvRaw from "@/data/communications.csv?raw"
@@ -843,9 +843,10 @@ function App() {
                       </div>
                     </div>
 
-                    <div className="relative">
+                    <div className="relative mt-3">
+                      <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-slate-400" />
                       <input
-                        className="h-10 w-full rounded-full border border-slate-200 bg-white pl-4 pr-11 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-slate-300 focus:ring-2 focus:ring-slate-200"
+                        className="h-10 w-full rounded-full border border-slate-200 bg-white pl-10 pr-11 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-slate-300 focus:ring-2 focus:ring-slate-200"
                         onChange={(event) => setStatusSearchQuery(event.target.value)}
                         placeholder="Начните вводить название..."
                         type="text"
