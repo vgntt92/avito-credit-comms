@@ -604,7 +604,7 @@ function EmailPreview({ item, copiedKey, onCopy }) {
         <div className="space-y-3 bg-white px-3.5 py-3.5">
           <CopyableText
             as="h3"
-            className="text-[15px] font-semibold leading-5 text-slate-900"
+            className="text-center text-[17px] font-semibold leading-6 text-slate-900"
             copiedKey={copiedKey}
             label="Копировать заголовок письма"
             onCopy={onCopy}
