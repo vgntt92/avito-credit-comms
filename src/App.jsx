@@ -613,7 +613,7 @@ function EmailPreview({ item, copiedKey, onCopy }) {
           <EmailBodyBlock copiedKey={copiedKey} onCopy={onCopy} value={item.emailBody} />
           {item.emailButton ? (
             <div className="group flex items-start gap-2 pt-1">
-              <div className="min-w-0 flex-1">
+              <div className="flex min-w-0 flex-1 justify-center">
                 <div
                   className="inline-flex items-center px-3.5 py-1.5 text-[13px] font-medium text-white"
                   style={{ backgroundColor: "#05AAFF", borderRadius: "22px" }}
