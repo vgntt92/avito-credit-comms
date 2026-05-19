@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { Bell, CalendarDays, Check, CheckCheck, ChevronDown, Clock3, Copy, LocateFixed, Mail, Package, Search, X } from "lucide-react"
+import { Bell, CalendarDays, Check, CheckCheck, ChevronDown, Clock3, Copy, Crosshair, Mail, Package, Search, X } from "lucide-react"
 
 import avitoPushIcon from "@/assets/avito-push-icon.png"
 import csvRaw from "@/data/communications.csv?raw"
@@ -15,7 +15,7 @@ const DATE_SORT_OPTIONS = [
 ]
 const MONTH_NAMES = "января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря"
 const SPACE_PATTERN = "[ \\u00A0]"
-const VARIABLE_TONE = "text-sky-600"
+const VARIABLE_TONE = "text-red-600"
 const STATUS_NOTE_PATTERN = /\s*\(([^()]+)\)\s*$/
 
 function mergeRanges(ranges) {
@@ -896,7 +896,7 @@ function App() {
                               title="Перейти к этой коммуникации"
                               type="button"
                             >
-                              <LocateFixed className="size-3.5" />
+                              <Crosshair className="size-3.5" />
                             </button>
                           </div>
                         )
@@ -923,7 +923,7 @@ function App() {
           <section className="space-y-5">
             {hasDataInSegment ? (
               <>
-                <section className="sticky top-6 z-10 rounded-[28px] border border-slate-200 bg-slate-50/75 p-4 shadow-[0_18px_50px_-40px_rgba(15,23,42,0.28)] sm:p-5">
+                <section className="sticky top-6 z-10 rounded-[28px] border border-slate-200 bg-slate-50 p-4 shadow-[0_18px_50px_-40px_rgba(15,23,42,0.28)] sm:p-5">
                   <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:items-end">
                     <div>
                       <p className="text-sm font-medium text-slate-500">Показать только с датой обновления с</p>
