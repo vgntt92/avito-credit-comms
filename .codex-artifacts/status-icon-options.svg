@@ -1,0 +1,60 @@
+<svg width="1180" height="290" viewBox="0 0 1180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1180" height="290" rx="24" fill="#F8FAFC"/>
+
+  <g font-family="Arial, sans-serif" fill="#0F172A">
+    <text x="40" y="44" font-size="24" font-weight="700">Варианты иконки для фильтра по статусам</text>
+    <text x="40" y="70" font-size="14" fill="#475569">Слева направо: Navigation, Navigation2, ArrowUpFromDot, MapPinCheckInside, Locate</text>
+  </g>
+
+  <g transform="translate(30 96)">
+    <rect width="208" height="164" rx="22" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <g transform="translate(90 38)" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+    </g>
+    <text x="104" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Navigation</text>
+    <text x="104" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#64748B">самая очевидная</text>
+  </g>
+
+  <g transform="translate(254 96)">
+    <rect width="208" height="164" rx="22" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <g transform="translate(92 38)" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <polygon points="12 2 19 21 12 17 5 21 12 2"/>
+    </g>
+    <text x="104" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Navigation2</text>
+    <text x="104" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#64748B">самая аккуратная</text>
+  </g>
+
+  <g transform="translate(478 96)">
+    <rect width="208" height="164" rx="22" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <g transform="translate(92 38)" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M5 9L12 2L19 9"/>
+      <path d="M12 16V2"/>
+      <circle cx="12" cy="21" r="1"/>
+    </g>
+    <text x="104" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0F172A">ArrowUpFromDot</text>
+    <text x="104" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#64748B">стрелка от точки</text>
+  </g>
+
+  <g transform="translate(702 96)">
+    <rect width="208" height="164" rx="22" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <g transform="translate(92 38)" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M20 10C20 14.993 14.461 20.193 12.601 21.799C12.242 22.11 11.758 22.11 11.399 21.799C9.539 20.193 4 14.993 4 10A8 8 0 0 1 20 10Z"/>
+      <path d="M9 10L11 12L15 8"/>
+    </g>
+    <text x="104" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0F172A">MapPinCheckInside</text>
+    <text x="104" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#64748B">отмеченная точка</text>
+  </g>
+
+  <g transform="translate(926 96)">
+    <rect width="208" height="164" rx="22" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <g transform="translate(92 38)" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="2" y1="12" x2="5" y2="12"/>
+      <line x1="19" y1="12" x2="22" y2="12"/>
+      <line x1="12" y1="2" x2="12" y2="5"/>
+      <line x1="12" y1="19" x2="12" y2="22"/>
+      <circle cx="12" cy="12" r="7"/>
+    </g>
+    <text x="104" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Locate</text>
+    <text x="104" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#64748B">больше про локатор</text>
+  </g>
+</svg>

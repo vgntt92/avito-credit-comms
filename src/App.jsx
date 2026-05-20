@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { Bell, CalendarDays, Check, CheckCheck, ChevronDown, Clock3, Copy, Crosshair, Mail, Package, Search, X } from "lucide-react"
+import { ArrowRight, Bell, CalendarDays, Check, CheckCheck, ChevronDown, Clock3, Copy, Mail, Package, Search, X } from "lucide-react"
 
 import avitoPushIcon from "@/assets/avito-push-icon.png"
 import csvRaw from "@/data/communications.csv?raw"
@@ -896,7 +896,7 @@ function App() {
                               title="Перейти к этой коммуникации"
                               type="button"
                             >
-                              <Crosshair className="size-3.5" />
+                              <ArrowRight className="size-3.5" />
                             </button>
                           </div>
                         )
